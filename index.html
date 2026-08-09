@@ -267,18 +267,6 @@ body{
 .gcard.shake{animation:gshake .4s}
 @keyframes gshake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 
-/* ── 대문(게이트) ── */
-#gate{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;
-  background:rgba(214,232,244,.35);backdrop-filter:blur(26px) saturate(1.1);
-  -webkit-backdrop-filter:blur(26px) saturate(1.1);
-  transition:opacity .6s ease, visibility .6s}
-#gate.off{opacity:0;visibility:hidden;pointer-events:none}
-.gcard{width:min(340px,86vw);text-align:center;padding:40px 30px 34px;border-radius:28px;
-  background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7);
-  box-shadow:0 30px 80px rgba(40,80,120,.35);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.gcard .gstar{font-size:13px;color:#e2b862;letter-spacing:.4em;text-indent:.4em;
-  animation:twk2 2.6s ease-in-out infinite}
 @keyframes twk2{0%,100%{opacity:1}50%{opacity:.4}}
 .gcard h2{font-family:var(--qs);font-weight:700;font-size:26px;color:var(--sky-deep);
   letter-spacing:.14em;margin:10px 0 24px}
@@ -399,14 +387,6 @@ body{
 </style>
 </head>
 <body>
-<div id="gate">
-  <div class="gcard" id="gcard">
-    <div class="gstar">✦ ✦ ✦</div>
-    <h2>星海</h2>
-    <input type="password" id="gpw" placeholder="PASSWORD" autocomplete="off">
-    <button class="gbtn" id="gbtn">ENTER</button>
-  </div>
-</div>
 <div class="player" id="player">
 
   <!-- 좌측 -->
@@ -599,9 +579,9 @@ const TRACKS = {
       <h3>FEARLESS</h3>
       <p style="font-size:12.5px;font-weight:300;line-height:1.9">길티, 레기온, 러브, 록시, 메이트, 뱅, 일레이, 임페리얼, 지젤, 프리드, 프라이드, 하츠</p>
       <h3>ARCH</h3>
-      <p style="font-size:12.5px;font-weight:300;line-height:1.9"> 바이브, 오버로드, 산타, 신드롬, 퓨어, 휴고, 해일</p>
+      <p style="font-size:12.5px;font-weight:300;line-height:1.9">바이브, 오버로드, 산타, 신드롬, 퓨어, 휴고, 해일</p>
       <h3>AFTERMESS</h3>
-      <p style="font-size:12.5px;font-weight:300;line-height:1.9">데미안, 4, 9</p>
+      <p style="font-size:12.5px;font-weight:300;line-height:1.9">데미안, 9</p>
       <h3>208님</h3>
       <p style="font-size:12.5px;font-weight:300;line-height:1.9">이승열, 구일오, 밀란</p>
       <h3>ETC.</h3>
@@ -728,24 +708,6 @@ document.addEventListener('pointerdown', e=>{
 });
 
 
-/* ── 대문 ── */
-const GATE_PW = '1107';   // ← 비밀번호는 여기서 변경
-const gate=document.getElementById('gate'), gpw=document.getElementById('gpw'),
-      gcard=document.getElementById('gcard');
-function tryGate(){
-  if(gpw.value.trim() === GATE_PW){
-    try{ sessionStorage.setItem('gate_ok','1'); }catch(e){}
-    gate.classList.add('off');
-    playBgm();
-  } else {
-    gcard.classList.remove('shake'); void gcard.offsetWidth; gcard.classList.add('shake');
-    gpw.value=''; gpw.focus();
-  }
-}
-document.getElementById('gbtn').addEventListener('click', tryGate);
-gpw.addEventListener('keydown', e=>{ if(e.key==='Enter') tryGate(); });
-try{ if(sessionStorage.getItem('gate_ok')==='1') gate.classList.add('off'); }catch(e){}
-if(!gate.classList.contains('off')) setTimeout(()=>gpw.focus(), 300);
 </script>
 </body>
 </html>
