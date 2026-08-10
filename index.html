@@ -1252,6 +1252,35 @@ pre{background:rgba(0,0,0,.28);color:#b8cfdf}
   .cat-strip button span{font-size:7px}
 }
 
+
+/* ===== v16: 재생 후에도 파도 배경 + 반투명 유리 카드 ===== */
+.desktop.started .cam-body{
+  background:linear-gradient(180deg,rgba(10,16,23,.34),rgba(10,16,23,.22) 40%,rgba(10,16,23,.4));
+  padding:4.2% 4.5%;
+  gap:8px;
+}
+.desktop.started .content-wrap{
+  background:rgba(11,17,24,.74);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:10px;
+  backdrop-filter:blur(12px) saturate(1.05);
+  -webkit-backdrop-filter:blur(12px) saturate(1.05);
+  box-shadow:0 14px 40px rgba(0,0,0,.4);
+}
+.desktop.started .lcd-hint{
+  background:rgba(11,17,24,.66);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+/* 팝업/메뉴 톤 유지 — 유리 위 요소 대비 보정 */
+.menu-row,.track,.card,.pfcard,.pc-blk,.playlist,.fold{background:rgba(255,255,255,.06)}
+.menu-row:hover,.track:hover{background:rgba(255,255,255,.1)}
+@media(max-width:700px){
+  .desktop.started .cam-body{padding:3.6% 3.6%}
+}
+
 </style>
 </head>
 <body>
