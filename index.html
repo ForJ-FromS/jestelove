@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>&#945; CMa &#183; N16&#176;42&#8242;</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='g'%3E%3Cstop offset='0%25' stop-color='%23EBCF9B'/%3E%3Cstop offset='45%25' stop-color='%23C9A96E' stop-opacity='.55'/%3E%3Cstop offset='100%25' stop-color='%23C9A96E' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='32' height='32' fill='%2306060C'/%3E%3Ccircle cx='16' cy='16' r='13' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23EBCF9B'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -1871,6 +1871,54 @@ details.gore .oitem{margin-bottom:20px}
 /* 구 카메라 .cbtn display:none 상쇄 */
 .oblk .cbtn{display:inline-block;width:auto;min-height:0}
 
+
+/* ===== v21: 순차 점등 + 로만 세리프 + 각진 카드 ===== */
+/* 별자리 순차 등장 */
+.sky-cats{opacity:1;pointer-events:none;transition:none}
+body.started .sky-cats{pointer-events:auto}
+.sky-cats .cst-el{opacity:0;transition:opacity .25s ease}
+body.started .sky-cats .cst-el{opacity:1;transition:opacity .8s ease var(--d)}
+.cst-ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .25s ease}
+body.started .cst-ln{stroke-dashoffset:0;transition:stroke-dashoffset .6s ease var(--d)}
+/* 로만 세리프 라벨 */
+.ob-node text{font-family:'Archivo',var(--pt);font-weight:400;font-size:9.5px;letter-spacing:.3em}
+.ob-node text.sub{font-family:var(--mono);font-size:6px;letter-spacing:.28em}
+.enter-node text{font-size:10.5px}
+.hud{font-family:'Archivo',var(--pt);letter-spacing:.3em}
+.hud-return{font-family:'Archivo',var(--pt);letter-spacing:.34em}
+.pp-head span{font-family:'Archivo',var(--pt);font-weight:400;font-size:14px;letter-spacing:.34em}
+.pp-head small{font-family:var(--mono)}
+.lockbox .lk-t{font-family:'Archivo',var(--pt);font-weight:400;letter-spacing:.44em}
+.lockbox .lk-btn{font-family:'Archivo',var(--pt);font-weight:400;letter-spacing:.3em}
+.mr-t{font-family:'Archivo',var(--pt);font-weight:400;letter-spacing:.2em;font-size:14px}
+/* 각진 카드 */
+.pp-panel{border-radius:6px}
+.menu-row,.track,.lrow,.arow,.oblk,.plist,.lockbox,.fold,.card,.pfcard,.pc-blk{border-radius:3px}
+.hero,.pfimg,.oset img,.msg img,.msg .bub2{border-radius:3px}
+.pp-back,.pp-x,.cpy,.lockbox input,.lockbox .lk-btn{border-radius:2px}
+.cbtn{border-radius:2px}
+details.gore{border-radius:3px}
+.tchip{border-radius:2px}
+.hud-return{border-radius:2px;padding:9px 22px}
+@media(max-width:640px){
+  .ob-node text{font-size:11px}
+  .ob-node text.sub{font-size:7px}
+}
+
+
+/* Archivo 라벨 보정 */
+.ob-node text{font-weight:600;font-size:9px;letter-spacing:.32em}
+.enter-node text{font-size:10px}
+.pp-head span{font-weight:600;font-size:12.5px;letter-spacing:.36em}
+.mr-t{font-weight:600;font-size:13px;letter-spacing:.22em}
+.hud{font-weight:500}
+.hud-return{font-weight:600;font-size:9px}
+.lockbox .lk-t{font-weight:600;font-size:13px}
+.lockbox .lk-btn{font-weight:600;font-size:10px}
+@media(max-width:640px){
+  .ob-node text{font-size:10.5px}
+}
+
 </style>
 </head>
 <body>
@@ -1892,47 +1940,59 @@ details.gore .oitem{margin-bottom:20px}
         </g>
       </g>
       <g class="sky-cats">
-        <g class="cst-line" stroke="#C9A96E" stroke-width="0.55" opacity="0.28"><line x1="494.6" y1="105.0" x2="446.1" y2="205.6"/><line x1="446.1" y1="205.6" x2="541.5" y2="225.7"/><line x1="541.5" y1="225.7" x2="657.6" y2="249.4"/><line x1="541.5" y1="225.7" x2="435.6" y2="368.0"/><line x1="435.6" y1="368.0" x2="398.0" y2="423.2"/><line x1="398.0" y1="423.2" x2="456.5" y2="429.9"/><line x1="456.5" y1="429.9" x2="471" y2="449.9"/><line x1="398.0" y1="423.2" x2="340.4" y2="455.4"/><line x1="471" y1="449.9" x2="720.0" y2="505.0"/></g>
-        <circle cx="494.6" cy="105.0" r="5.5" fill="url(#hwl)" opacity=".5"/>
-        <circle cx="494.6" cy="105.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
-        <circle cx="446.1" cy="205.6" r="5.5" fill="url(#hwl)" opacity=".5"/>
-        <circle cx="446.1" cy="205.6" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
-        <g class="ob-node" data-sec="about">
+        <g class="cst-line" stroke="#C9A96E" stroke-width="0.55" opacity="0.28"><line class="cst-ln" style="--d:2.55s" pathLength="1" x1="495.9" y1="140.0" x2="446.1" y2="205.6"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="446.1" y1="205.6" x2="541.5" y2="225.7"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="541.5" y1="225.7" x2="657.6" y2="249.4"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="541.5" y1="225.7" x2="450.2" y2="357.0"/><line class="cst-ln" style="--d:0.8s" pathLength="1" x1="450.2" y1="357.0" x2="421.2" y2="402.5"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="421.2" y1="402.5" x2="456.5" y2="429.9"/><line class="cst-ln" style="--d:1.8s" pathLength="1" x1="456.5" y1="429.9" x2="471.0" y2="449.9"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="421.2" y1="402.5" x2="340.4" y2="455.4"/><line class="cst-ln" style="--d:2.3s" pathLength="1" x1="471.0" y1="449.9" x2="670.0" y2="470.0"/></g>
+        <g class="cst-el" style="--d:2.8s">
+          <circle cx="495.9" cy="140.0" r="5.5" fill="url(#hwl)" opacity=".5"/>
+          <circle cx="495.9" cy="140.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
+        </g>
+        <g class="cst-el" style="--d:0.55s">
+          <circle cx="446.1" cy="205.6" r="5.5" fill="url(#hwl)" opacity=".5"/>
+          <circle cx="446.1" cy="205.6" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
+        </g>
+        <g class="ob-node cst-el" data-sec="about" style="--d:0.0s">
           <circle cx="541.5" cy="225.7" r="28" fill="transparent"/>
           <circle class="nd-halo" cx="541.5" cy="225.7" r="15" fill="url(#hgl)"/>
           <circle class="nd-core" cx="541.5" cy="225.7" r="2.2" fill="#EBCF9B" filter="url(#fs1l)"/>
-          <text x="541.5" y="254.7" text-anchor="middle">성향</text>
+          <text x="541.5" y="254.7" text-anchor="middle">ABOUT</text>
           <text x="541.5" y="269.7" text-anchor="middle" class="sub">SIRIUS</text>
         </g>
-        <g class="ob-node" data-sec="pair">
+        <g class="ob-node cst-el" data-sec="pair" style="--d:0.55s">
           <circle cx="657.6" cy="249.4" r="28" fill="transparent"/>
           <circle class="nd-halo" cx="657.6" cy="249.4" r="15" fill="url(#hwl)"/>
           <circle class="nd-core" cx="657.6" cy="249.4" r="2.2" fill="#F0EEE7" filter="url(#fs1l)"/>
-          <text x="657.6" y="278.4" text-anchor="middle">페어</text>
+          <text x="657.6" y="278.4" text-anchor="middle">PAIR</text>
           <text x="657.6" y="293.4" text-anchor="middle" class="sub">MIRZAM</text>
         </g>
-        <circle cx="435.6" cy="368.0" r="5.5" fill="url(#hwl)" opacity=".5"/>
-        <circle cx="435.6" cy="368.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
-        <g class="ob-node" data-sec="prompt">
-          <circle cx="398.0" cy="423.2" r="28" fill="transparent"/>
-          <circle class="nd-halo" cx="398.0" cy="423.2" r="15" fill="url(#hwl)"/>
-          <circle class="nd-core" cx="398.0" cy="423.2" r="2.2" fill="#F0EEE7" filter="url(#fs1l)"/>
-          <text x="398.0" y="452.2" text-anchor="middle">프롬 <tspan class="cat-lock">&#128274;</tspan></text>
-          <text x="398.0" y="467.2" text-anchor="middle" class="sub">WEZEN</text>
+        <g class="cst-el" style="--d:0.55s">
+          <circle cx="450.2" cy="357.0" r="5.5" fill="url(#hwl)" opacity=".5"/>
+          <circle cx="450.2" cy="357.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
         </g>
-        <circle cx="456.5" cy="429.9" r="5.5" fill="url(#hwl)" opacity=".5"/>
-        <circle cx="456.5" cy="429.9" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
-        <g class="ob-node" data-sec="link">
-          <circle cx="471" cy="449.9" r="28" fill="transparent"/>
-          <circle class="nd-halo" cx="471" cy="449.9" r="15" fill="url(#hwl)"/>
-          <circle class="nd-core" cx="471" cy="449.9" r="2.2" fill="#F0EEE7" filter="url(#fs1l)"/>
-          <text x="471" y="478.9" text-anchor="middle">링크 <tspan class="cat-lock">&#128274;</tspan></text>
-          <text x="471" y="493.9" text-anchor="middle" class="sub">ADHARA</text>
+        <g class="ob-node cst-el" data-sec="prompt" style="--d:1.05s">
+          <circle cx="421.2" cy="402.5" r="28" fill="transparent"/>
+          <circle class="nd-halo" cx="421.2" cy="402.5" r="15" fill="url(#hwl)"/>
+          <circle class="nd-core" cx="421.2" cy="402.5" r="2.2" fill="#F0EEE7" filter="url(#fs1l)"/>
+          <text x="421.2" y="431.5" text-anchor="middle">PROMPT <tspan class="cat-lock">&#128274;</tspan></text>
+          <text x="421.2" y="446.5" text-anchor="middle" class="sub">WEZEN</text>
         </g>
-        <circle cx="340.4" cy="455.4" r="5.5" fill="url(#hwl)" opacity=".5"/>
-        <circle cx="340.4" cy="455.4" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
-        <circle cx="720.0" cy="505.0" r="5.5" fill="url(#hwl)" opacity=".5"/>
-        <circle cx="720.0" cy="505.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
+        <g class="cst-el" style="--d:1.55s">
+          <circle cx="456.5" cy="429.9" r="5.5" fill="url(#hwl)" opacity=".5"/>
+          <circle cx="456.5" cy="429.9" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
+        </g>
+        <g class="ob-node cst-el" data-sec="link" style="--d:2.05s">
+          <circle cx="471.0" cy="449.9" r="28" fill="transparent"/>
+          <circle class="nd-halo" cx="471.0" cy="449.9" r="15" fill="url(#hwl)"/>
+          <circle class="nd-core" cx="471.0" cy="449.9" r="2.2" fill="#F0EEE7" filter="url(#fs1l)"/>
+          <text x="471.0" y="478.9" text-anchor="middle">ARCHIVE <tspan class="cat-lock">&#128274;</tspan></text>
+          <text x="471.0" y="493.9" text-anchor="middle" class="sub">ADHARA</text>
+        </g>
+        <g class="cst-el" style="--d:1.55s">
+          <circle cx="340.4" cy="455.4" r="5.5" fill="url(#hwl)" opacity=".5"/>
+          <circle cx="340.4" cy="455.4" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
+        </g>
+        <g class="cst-el" style="--d:2.55s">
+          <circle cx="670.0" cy="470.0" r="5.5" fill="url(#hwl)" opacity=".5"/>
+          <circle cx="670.0" cy="470.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1l)"/>
+        </g>
       </g>
       </svg>
 <svg class="ob-sky sky-p" viewBox="0 0 620 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -1943,55 +2003,67 @@ details.gore .oitem{margin-bottom:20px}
       </defs>
       <g class="sky-cover">
         <g class="ob-node enter-node" data-sec="enter">
-          <circle cx="228.3" cy="578" r="46" fill="transparent"/>
-          <circle cx="228.3" cy="578" r="27" fill="url(#hgp)"><animate attributeName="opacity" values="1;.4;1" dur="3.6s" repeatCount="indefinite"/></circle>
-          <circle cx="228.3" cy="578" r="2.8" fill="#EBCF9B" filter="url(#fs1p)"><animate attributeName="opacity" values="1;.6;1" dur="2.6s" repeatCount="indefinite"/></circle>
-          <text x="228.3" y="616" text-anchor="middle">SIRIUS</text>
-          <text x="228.3" y="631" text-anchor="middle" class="sub">&#945; CMa &#183; N16&#176;42&#8242;</text>
+          <circle cx="228.3" cy="578.0" r="46" fill="transparent"/>
+          <circle cx="228.3" cy="578.0" r="27" fill="url(#hgp)"><animate attributeName="opacity" values="1;.4;1" dur="3.6s" repeatCount="indefinite"/></circle>
+          <circle cx="228.3" cy="578.0" r="2.8" fill="#EBCF9B" filter="url(#fs1p)"><animate attributeName="opacity" values="1;.6;1" dur="2.6s" repeatCount="indefinite"/></circle>
+          <text x="228.3" y="616.0" text-anchor="middle">SIRIUS</text>
+          <text x="228.3" y="631.0" text-anchor="middle" class="sub">&#945; CMa &#183; N16&#176;42&#8242;</text>
         </g>
       </g>
       <g class="sky-cats">
-        <g class="cst-line" stroke="#C9A96E" stroke-width="0.55" opacity="0.28"><line x1="160.0" y1="493.2" x2="207.6" y2="398.5"/><line x1="207.6" y1="398.5" x2="228.3" y2="578"/><line x1="228.3" y1="578" x2="252.7" y2="796.6"/><line x1="228.3" y1="578" x2="357.2" y2="418.0"/><line x1="357.2" y1="418.0" x2="410.5" y2="351.7"/><line x1="410.5" y1="351.7" x2="438.7" y2="418"/><line x1="438.7" y1="418" x2="459.3" y2="445.4"/><line x1="410.5" y1="351.7" x2="465" y2="199.5"/><line x1="459.3" y1="445.4" x2="460.0" y2="780.0"/></g>
-        <circle cx="160.0" cy="493.2" r="5.5" fill="url(#hwp)" opacity=".5"/>
-        <circle cx="160.0" cy="493.2" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
-        <circle cx="207.6" cy="398.5" r="5.5" fill="url(#hwp)" opacity=".5"/>
-        <circle cx="207.6" cy="398.5" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
-        <g class="ob-node" data-sec="about">
-          <circle cx="228.3" cy="578" r="28" fill="transparent"/>
-          <circle class="nd-halo" cx="228.3" cy="578" r="15" fill="url(#hgp)"/>
-          <circle class="nd-core" cx="228.3" cy="578" r="2.2" fill="#EBCF9B" filter="url(#fs1p)"/>
-          <text x="228.3" y="607" text-anchor="middle">성향</text>
-          <text x="228.3" y="622" text-anchor="middle" class="sub">SIRIUS</text>
+        <g class="cst-line" stroke="#C9A96E" stroke-width="0.55" opacity="0.28"><line class="cst-ln" style="--d:2.55s" pathLength="1" x1="140.0" y1="492.2" x2="207.6" y2="398.5"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="207.6" y1="398.5" x2="228.3" y2="578.0"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="228.3" y1="578.0" x2="252.7" y2="796.6"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="228.3" y1="578.0" x2="363.5" y2="406.3"/><line class="cst-ln" style="--d:0.8s" pathLength="1" x1="363.5" y1="406.3" x2="410.5" y2="351.7"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="410.5" y1="351.7" x2="438.7" y2="418.0"/><line class="cst-ln" style="--d:1.8s" pathLength="1" x1="438.7" y1="418.0" x2="459.3" y2="445.4"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="410.5" y1="351.7" x2="465.0" y2="199.5"/><line class="cst-ln" style="--d:2.3s" pathLength="1" x1="459.3" y1="445.4" x2="480.0" y2="820.0"/></g>
+        <g class="cst-el" style="--d:2.8s">
+          <circle cx="140.0" cy="492.2" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="140.0" cy="492.2" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
         </g>
-        <g class="ob-node" data-sec="pair">
+        <g class="cst-el" style="--d:0.55s">
+          <circle cx="207.6" cy="398.5" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="207.6" cy="398.5" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+        </g>
+        <g class="ob-node cst-el" data-sec="about" style="--d:0.0s">
+          <circle cx="228.3" cy="578.0" r="28" fill="transparent"/>
+          <circle class="nd-halo" cx="228.3" cy="578.0" r="15" fill="url(#hgp)"/>
+          <circle class="nd-core" cx="228.3" cy="578.0" r="2.2" fill="#EBCF9B" filter="url(#fs1p)"/>
+          <text x="228.3" y="607.0" text-anchor="middle">ABOUT</text>
+          <text x="228.3" y="622.0" text-anchor="middle" class="sub">SIRIUS</text>
+        </g>
+        <g class="ob-node cst-el" data-sec="pair" style="--d:0.55s">
           <circle cx="252.7" cy="796.6" r="28" fill="transparent"/>
           <circle class="nd-halo" cx="252.7" cy="796.6" r="15" fill="url(#hwp)"/>
           <circle class="nd-core" cx="252.7" cy="796.6" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
-          <text x="252.7" y="825.6" text-anchor="middle">페어</text>
+          <text x="252.7" y="825.6" text-anchor="middle">PAIR</text>
           <text x="252.7" y="840.6" text-anchor="middle" class="sub">MIRZAM</text>
         </g>
-        <circle cx="357.2" cy="418.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
-        <circle cx="357.2" cy="418.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
-        <g class="ob-node" data-sec="prompt">
+        <g class="cst-el" style="--d:0.55s">
+          <circle cx="363.5" cy="406.3" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="363.5" cy="406.3" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+        </g>
+        <g class="ob-node cst-el" data-sec="prompt" style="--d:1.05s">
           <circle cx="410.5" cy="351.7" r="28" fill="transparent"/>
           <circle class="nd-halo" cx="410.5" cy="351.7" r="15" fill="url(#hwp)"/>
           <circle class="nd-core" cx="410.5" cy="351.7" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
-          <text x="410.5" y="380.7" text-anchor="middle">프롬 <tspan class="cat-lock">&#128274;</tspan></text>
+          <text x="410.5" y="380.7" text-anchor="middle">PROMPT <tspan class="cat-lock">&#128274;</tspan></text>
           <text x="410.5" y="395.7" text-anchor="middle" class="sub">WEZEN</text>
         </g>
-        <circle cx="438.7" cy="418" r="5.5" fill="url(#hwp)" opacity=".5"/>
-        <circle cx="438.7" cy="418" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
-        <g class="ob-node" data-sec="link">
+        <g class="cst-el" style="--d:1.55s">
+          <circle cx="438.7" cy="418.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="438.7" cy="418.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+        </g>
+        <g class="ob-node cst-el" data-sec="link" style="--d:2.05s">
           <circle cx="459.3" cy="445.4" r="28" fill="transparent"/>
           <circle class="nd-halo" cx="459.3" cy="445.4" r="15" fill="url(#hwp)"/>
           <circle class="nd-core" cx="459.3" cy="445.4" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
-          <text x="459.3" y="474.4" text-anchor="middle">링크 <tspan class="cat-lock">&#128274;</tspan></text>
+          <text x="459.3" y="474.4" text-anchor="middle">ARCHIVE <tspan class="cat-lock">&#128274;</tspan></text>
           <text x="459.3" y="489.4" text-anchor="middle" class="sub">ADHARA</text>
         </g>
-        <circle cx="465" cy="199.5" r="5.5" fill="url(#hwp)" opacity=".5"/>
-        <circle cx="465" cy="199.5" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
-        <circle cx="460.0" cy="780.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
-        <circle cx="460.0" cy="780.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+        <g class="cst-el" style="--d:1.55s">
+          <circle cx="465.0" cy="199.5" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="465.0" cy="199.5" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+        </g>
+        <g class="cst-el" style="--d:2.55s">
+          <circle cx="480.0" cy="820.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="480.0" cy="820.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+        </g>
       </g>
       </svg>
 <div class="hud hud-top"><span><b>星海</b> OBSERVATORY</span><span id="ob-clk">--:--:--</span></div>
@@ -1999,7 +2071,7 @@ details.gore .oitem{margin-bottom:20px}
 <button class="hud-return" id="ob-return">&#9666; RETURN</button>
 <div class="popup" data-pid="sec-about">
       <div class="pp-panel">
-        <div class="pp-head"><span>성향<small>OBSERVER PROFILE &mdash; &#945; CMa &#183; N16&#176;42&#8242;</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
+        <div class="pp-head"><span>ABOUT<small>OBSERVER PROFILE &mdash; &#945; CMa &#183; N16&#176;42&#8242;</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
         <div class="pp-body"><div class="menu-list">
             <button class="menu-row" data-popup="p-about"><span class="mr-t">ABOUT ME<small>PROFILE</small></span><i>&#9656;</i></button>
             <button class="menu-row" data-popup="p-notice"><span class="mr-t">NOTICE<small>BYF / NG</small></span><i>&#9656;</i></button>
@@ -2012,7 +2084,7 @@ details.gore .oitem{margin-bottom:20px}
     </div>
 <div class="popup" data-pid="sec-pair">
       <div class="pp-panel">
-        <div class="pp-head"><span>페어<small>BINARY SYSTEM</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
+        <div class="pp-head"><span>PAIR<small>BINARY SYSTEM</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
         <div class="pp-body"><div class="playlist">
             <button class="track" data-popup="p-jeti"><span class="tno">01</span><span class="tname"><b>제티</b><small>JESTE X SERENITY</small></span><span class="tplay">&#9656;</span></button>
             <button class="track" data-popup="p-teru"><span class="tno">02</span><span class="tname"><b>테루</b><small>BLUE X HECATE</small></span><span class="tplay">&#9656;</span></button>
@@ -2021,7 +2093,7 @@ details.gore .oitem{margin-bottom:20px}
     </div>
 <div class="popup" data-pid="sec-prompt">
       <div class="pp-panel">
-        <div class="pp-head"><span>프롬<small>SIGNAL ARCHIVE</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
+        <div class="pp-head"><span>PROMPT<small>SIGNAL ARCHIVE</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
         <div class="pp-body"><div class="menu-list">
             <button class="menu-row" data-popup="p-prom-jeti"><span class="mr-t">제티<small>PROMPT ARCHIVE</small></span><i>&#9656;</i></button>
             <button class="menu-row" data-popup="p-prom-teru"><span class="mr-t">테루<small>PROMPT ARCHIVE</small></span><i>&#9656;</i></button>
@@ -2030,7 +2102,7 @@ details.gore .oitem{margin-bottom:20px}
     </div>
 <div class="popup" data-pid="sec-link">
       <div class="pp-panel">
-        <div class="pp-head"><span>링크<small>SIGNAL RELAY</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
+        <div class="pp-head"><span>ARCHIVE<small>SIGNAL RELAY</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
         <div class="pp-body"><div class="menu-list"><div class="archive-list"><button class="arow" data-popup="p-ooc-daily"><span class="ar-l">&#8594; OOC &mdash; Daily</span><span class="ar-r">BACKUP</span></button>
 <button class="arow" data-popup="p-ooc-auif"><span class="ar-l">&#8594; OOC &mdash; AU / IF</span><span class="ar-r">BACKUP</span></button>
 <a class="arow" href="https://forj-froms.github.io/Profile-Maker-Fearless/" target="_blank"><span class="ar-l">→ 피어리스 프로필</span><span class="ar-r">→</span></a>
@@ -2085,7 +2157,8 @@ details.gore .oitem{margin-bottom:20px}
 <div class="popup" data-pid="p-notice">
       <div class="pp-panel">
         <div class="pp-head"><button class="pp-back" data-back="sec-about" aria-label="back">&#8249;</button><span>NOTICE<small>BYF / NG</small></span><button class="pp-x" aria-label="close">&#10005;</button></div>
-        <div class="pp-body"><ul>
+        <div class="pp-body"><h3>BYF</h3>
+      <ul>
         <li>채팅 백업 / 에셋 뽑기 / OOC 제작 / NSFW 언급 有</li>
         <li>겹친소, 비계팅, 장르 트친소 등등 모든 트친소 해시태그 상시 뮤트 상태라 반응 어려움</li>
         <li>트친되는 즉시 리트윗 끄기 + 보기 어려운 것들 위주로 단어뮤트 / 뮤트 사용 多</li>
