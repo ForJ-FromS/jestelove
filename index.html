@@ -2047,6 +2047,38 @@ details.gore{border-radius:3px}
 .hud-right{display:flex;align-items:center;gap:9px;pointer-events:none}
 #moon-ph{width:13px;height:13px;display:block;opacity:.8}
 
+
+/* ===== v24: 모바일 팝업 보정 ===== */
+@media(max-width:640px){
+  /* 좌우 여백 + 상하 안전영역 → 별하늘 보이게, ✕ 안 잘리게 */
+  .popup{padding:20px 16px;align-items:center}
+  .pp-panel{max-height:84vh}
+  @supports (height:100dvh){
+    .pp-panel{max-height:calc(100dvh - 76px)}
+  }
+  /* 글씨 축소 */
+  .pp-body{font-size:13px;padding:16px 14px 24px}
+  .pp-head{padding:12px 13px}
+  .pp-head span{font-size:11px;letter-spacing:.28em}
+  .sec-h{font-size:10.5px;letter-spacing:.3em}
+  .pf dt{font-size:9px}
+  .pf dd{font-size:13px}
+  ul li{font-size:13px;line-height:1.85}
+  .dsec p,.card p,.pfbody p,.phold{font-size:13px}
+  .dh{font-size:13px}
+  h3{font-size:11px}
+  .mr-t{font-size:12px}
+  .otxt{font-size:12px;line-height:1.75}
+  .otitle{font-size:12.5px}
+  .plh{font-size:10px}
+  .pln{font-size:12px}
+  .pnote{font-size:11px}
+  .about-links{font-size:9px}
+  .pc-name{font-size:13px;padding:22px 12px 10px}
+  .lockbox input{font-size:13px}
+  .pp-panel::after{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -2132,66 +2164,66 @@ details.gore{border-radius:3px}
       </defs>
       <g class="sky-cover">
         <g class="ob-node enter-node" data-sec="enter">
-          <circle cx="228.3" cy="578.0" r="46" fill="transparent"/>
-          <circle cx="228.3" cy="578.0" r="27" fill="url(#hgp)"><animate attributeName="opacity" values="1;.4;1" dur="3.6s" repeatCount="indefinite"/></circle>
-          <circle cx="228.3" cy="578.0" r="2.8" fill="#EBCF9B" filter="url(#fs1p)"><animate attributeName="opacity" values="1;.6;1" dur="2.6s" repeatCount="indefinite"/></circle>
-          <text x="228.3" y="616.0" text-anchor="middle">SIRIUS</text>
-          <text x="228.3" y="631.0" text-anchor="middle" class="sub">&#945; CMa &#183; N16&#176;42&#8242;</text>
+          <circle cx="350.2" cy="413.5" r="46" fill="transparent"/>
+          <circle cx="350.2" cy="413.5" r="27" fill="url(#hgp)"><animate attributeName="opacity" values="1;.4;1" dur="3.6s" repeatCount="indefinite"/></circle>
+          <circle cx="350.2" cy="413.5" r="2.8" fill="#EBCF9B" filter="url(#fs1p)"><animate attributeName="opacity" values="1;.6;1" dur="2.6s" repeatCount="indefinite"/></circle>
+          <text x="350.2" y="451.5" text-anchor="middle">SIRIUS</text>
+          <text x="350.2" y="466.5" text-anchor="middle" class="sub">&#945; CMa &#183; N16&#176;42&#8242;</text>
         </g>
       </g>
       <g class="sky-cats">
-        <g class="cst-line" stroke="#C9A96E" stroke-width="0.55" opacity="0.28"><line class="cst-ln" style="--d:2.55s" pathLength="1" x1="140.0" y1="492.2" x2="207.6" y2="398.5"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="207.6" y1="398.5" x2="228.3" y2="578.0"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="228.3" y1="578.0" x2="252.7" y2="796.6"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="228.3" y1="578.0" x2="363.5" y2="406.3"/><line class="cst-ln" style="--d:0.8s" pathLength="1" x1="363.5" y1="406.3" x2="410.5" y2="351.7"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="410.5" y1="351.7" x2="438.7" y2="418.0"/><line class="cst-ln" style="--d:1.8s" pathLength="1" x1="438.7" y1="418.0" x2="459.3" y2="445.4"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="410.5" y1="351.7" x2="465.0" y2="199.5"/><line class="cst-ln" style="--d:2.3s" pathLength="1" x1="459.3" y1="445.4" x2="480.0" y2="820.0"/></g>
+        <g class="cst-line" stroke="#C9A96E" stroke-width="0.55" opacity="0.28"><line class="cst-ln" style="--d:2.55s" pathLength="1" x1="306.0" y1="320.0" x2="257.7" y2="391.6"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="257.7" y1="391.6" x2="350.2" y2="413.5"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="350.2" y1="413.5" x2="462.9" y2="439.3"/><line class="cst-ln" style="--d:0.25s" pathLength="1" x1="350.2" y1="413.5" x2="261.7" y2="556.7"/><line class="cst-ln" style="--d:0.8s" pathLength="1" x1="261.7" y1="556.7" x2="233.5" y2="606.4"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="233.5" y1="606.4" x2="267.7" y2="636.2"/><line class="cst-ln" style="--d:1.8s" pathLength="1" x1="267.7" y1="636.2" x2="281.8" y2="658.1"/><line class="cst-ln" style="--d:1.3s" pathLength="1" x1="233.5" y1="606.4" x2="155.1" y2="664.1"/><line class="cst-ln" style="--d:2.3s" pathLength="1" x1="281.8" y1="658.1" x2="475.0" y2="680.0"/></g>
         <g class="cst-el" style="--d:2.8s">
-          <circle cx="140.0" cy="492.2" r="5.5" fill="url(#hwp)" opacity=".5"/>
-          <circle cx="140.0" cy="492.2" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+          <circle cx="306.0" cy="320.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="306.0" cy="320.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
         </g>
         <g class="cst-el" style="--d:0.55s">
-          <circle cx="207.6" cy="398.5" r="5.5" fill="url(#hwp)" opacity=".5"/>
-          <circle cx="207.6" cy="398.5" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+          <circle cx="257.7" cy="391.6" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="257.7" cy="391.6" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
         </g>
         <g class="ob-node cst-el" data-sec="about" style="--d:0.0s">
-          <circle cx="228.3" cy="578.0" r="28" fill="transparent"/>
-          <circle class="nd-halo" cx="228.3" cy="578.0" r="15" fill="url(#hgp)"/>
-          <circle class="nd-core" cx="228.3" cy="578.0" r="2.2" fill="#EBCF9B" filter="url(#fs1p)"/>
-          <text x="228.3" y="607.0" text-anchor="middle">ABOUT</text>
-          <text x="228.3" y="622.0" text-anchor="middle" class="sub">SIRIUS</text>
+          <circle cx="350.2" cy="413.5" r="28" fill="transparent"/>
+          <circle class="nd-halo" cx="350.2" cy="413.5" r="15" fill="url(#hgp)"/>
+          <circle class="nd-core" cx="350.2" cy="413.5" r="2.2" fill="#EBCF9B" filter="url(#fs1p)"/>
+          <text x="350.2" y="442.5" text-anchor="middle">ABOUT</text>
+          <text x="350.2" y="457.5" text-anchor="middle" class="sub">SIRIUS</text>
         </g>
         <g class="ob-node cst-el" data-sec="pair" style="--d:0.55s">
-          <circle cx="252.7" cy="796.6" r="28" fill="transparent"/>
-          <circle class="nd-halo" cx="252.7" cy="796.6" r="15" fill="url(#hwp)"/>
-          <circle class="nd-core" cx="252.7" cy="796.6" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
-          <text x="252.7" y="825.6" text-anchor="middle">PAIR</text>
-          <text x="252.7" y="840.6" text-anchor="middle" class="sub">MIRZAM</text>
+          <circle cx="462.9" cy="439.3" r="28" fill="transparent"/>
+          <circle class="nd-halo" cx="462.9" cy="439.3" r="15" fill="url(#hwp)"/>
+          <circle class="nd-core" cx="462.9" cy="439.3" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
+          <text x="462.9" y="468.3" text-anchor="middle">PAIR</text>
+          <text x="462.9" y="483.3" text-anchor="middle" class="sub">MIRZAM</text>
         </g>
         <g class="cst-el" style="--d:0.55s">
-          <circle cx="363.5" cy="406.3" r="5.5" fill="url(#hwp)" opacity=".5"/>
-          <circle cx="363.5" cy="406.3" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+          <circle cx="261.7" cy="556.7" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="261.7" cy="556.7" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
         </g>
         <g class="ob-node cst-el" data-sec="prompt" style="--d:1.05s">
-          <circle cx="410.5" cy="351.7" r="28" fill="transparent"/>
-          <circle class="nd-halo" cx="410.5" cy="351.7" r="15" fill="url(#hwp)"/>
-          <circle class="nd-core" cx="410.5" cy="351.7" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
-          <text x="410.5" y="380.7" text-anchor="middle">PROMPT <tspan class="cat-lock">&#128274;</tspan></text>
-          <text x="410.5" y="395.7" text-anchor="middle" class="sub">WEZEN</text>
+          <circle cx="233.5" cy="606.4" r="28" fill="transparent"/>
+          <circle class="nd-halo" cx="233.5" cy="606.4" r="15" fill="url(#hwp)"/>
+          <circle class="nd-core" cx="233.5" cy="606.4" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
+          <text x="233.5" y="635.4" text-anchor="middle">PROMPT <tspan class="cat-lock">&#128274;</tspan></text>
+          <text x="233.5" y="650.4" text-anchor="middle" class="sub">WEZEN</text>
         </g>
         <g class="cst-el" style="--d:1.55s">
-          <circle cx="438.7" cy="418.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
-          <circle cx="438.7" cy="418.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+          <circle cx="267.7" cy="636.2" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="267.7" cy="636.2" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
         </g>
         <g class="ob-node cst-el" data-sec="link" style="--d:2.05s">
-          <circle cx="459.3" cy="445.4" r="28" fill="transparent"/>
-          <circle class="nd-halo" cx="459.3" cy="445.4" r="15" fill="url(#hwp)"/>
-          <circle class="nd-core" cx="459.3" cy="445.4" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
-          <text x="459.3" y="474.4" text-anchor="middle">ARCHIVE <tspan class="cat-lock">&#128274;</tspan></text>
-          <text x="459.3" y="489.4" text-anchor="middle" class="sub">ADHARA</text>
+          <circle cx="281.8" cy="658.1" r="28" fill="transparent"/>
+          <circle class="nd-halo" cx="281.8" cy="658.1" r="15" fill="url(#hwp)"/>
+          <circle class="nd-core" cx="281.8" cy="658.1" r="2.2" fill="#F0EEE7" filter="url(#fs1p)"/>
+          <text x="281.8" y="687.1" text-anchor="middle">ARCHIVE <tspan class="cat-lock">&#128274;</tspan></text>
+          <text x="281.8" y="702.1" text-anchor="middle" class="sub">ADHARA</text>
         </g>
         <g class="cst-el" style="--d:1.55s">
-          <circle cx="465.0" cy="199.5" r="5.5" fill="url(#hwp)" opacity=".5"/>
-          <circle cx="465.0" cy="199.5" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+          <circle cx="155.1" cy="664.1" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="155.1" cy="664.1" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
         </g>
         <g class="cst-el" style="--d:2.55s">
-          <circle cx="480.0" cy="820.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
-          <circle cx="480.0" cy="820.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
+          <circle cx="475.0" cy="680.0" r="5.5" fill="url(#hwp)" opacity=".5"/>
+          <circle cx="475.0" cy="680.0" r="1.3" fill="#E5E2DA" opacity=".88" filter="url(#fs1p)"/>
         </g>
       </g>
       </svg>
@@ -2313,15 +2345,15 @@ details.gore{border-radius:3px}
       <div class="plist">
       <div class="plrow"><span class="plh">@eung9</span><span class="pln">길티 · 레기온 · 러브 · 록시 · 메이트 · 뱅 · 일레이 · 임페리얼 · 지젤 · 프리드 · 프라이드 · 하츠</span></div>
       <div class="plrow"><span class="plh">@CherryMango</span><span class="pln">노아 · 바이브 · 오버로드 · 신드롬 · 퓨어 · 휴고 · 해일</span></div>
-      <div class="plrow"><span class="plh">@qwerty_</span><span class="pln">4 · 데미안 · Oz</span></div>
+      <div class="plrow"><span class="plh">@qwerty_</span><span class="pln">4 · Oz</span></div>
       <div class="plrow"><span class="plh">@208x195</span><span class="pln">이승열 · 구일오 · 밀란</span></div>
       <div class="plrow"><span class="plh">@meowmoon</span><span class="pln">단테 로마노</span></div>
       <div class="plrow"><span class="plh">@Meom_Meo</span><span class="pln">매그넘 · 키츠네</span></div>
-      <div class="plrow"><span class="plh">@chsean</span><span class="pln">사공주한</span></div>
+      <div class="plrow"><span class="plh">@chsean</span><span class="pln">사공주한 · 반이진</span></div>
       <div class="plrow"><span class="plh">@ny4ngny4ng00</span><span class="pln">노바</span></div>
       <div class="plrow"><span class="plh">@Toyoman</span><span class="pln">에테르</span></div>
       <div class="plrow"><span class="plh">@seita</span><span class="pln">뤼번 싱클레어</span></div>
-      <div class="plrow"><span class="plh">ETC.</span><span class="pln">캘런 오코너 · 백호준 · 기재언 · 우재경 · 할파스 · 킬리언</span></div>
+      <div class="plrow"><span class="plh">ETC.</span><span class="pln">캘런 오코너 · 백호준 · 기재언 · 우재경 · 할파스</span></div>
       </div>
       <p class="pnote pnote-b">리스트에 없어도 배려하는 캐릭터들이 있고, 편의상 최대로 2D까지 유지하려고 노력합니다만 아크의 경우 이 이상 배려 어렵습니다.</p></div>
       </div>
